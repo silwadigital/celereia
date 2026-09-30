@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Célere IA — Agentes de IA que atendem e qualificam seus leads no WhatsApp</title>
+<meta name="description" content="A Célere IA responde seus leads no WhatsApp em segundos, qualifica, faz follow-up e envia relatórios para o seu time comercial. No ar em 7 dias.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Célere IA — Velocidade que vira venda">
+<meta property="og:description" content="Agentes de IA que atendem, qualificam e acompanham seus leads no WhatsApp, 24 horas por dia.">
+<meta name="theme-color" content="#0E1116">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22%230E1116%22/%3E%3Cg%20transform%3D%22translate%280%200%29%20scale%281.0%29%22%3E%3Cpath%20d%3D%22M87.64%2082.47%20A30%2030%200%201%201%2087.64%2045.53%22%20fill%3D%22none%22%20stroke%3D%22%23C8F547%22%20stroke-width%3D%2216%22/%3E%3Cpath%20d%3D%22M52.76%2091.82%20L24.6%2094.78%20L36.18%2075.24%20Z%22%20fill%3D%22%23C8F547%22/%3E%3Ccircle%20cx%3D%2294%22%20cy%3D%2264%22%20r%3D%228.5%22%20fill%3D%22%23F4F2EC%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#0E1116;--papel:#F4F2EC;--lima:#C8F547;--lima-hover:#D6FF5E;
+  --azul:#5B8CFF;--azul-claro:#2A55D6;--sup:#161B24;--sup-2:#1B212C;--borda:#2A3340;
+  --borda-clara:#DDD9CE;--texto:#EEF0F3;--titulo:#F4F2EC;--suave:#9AA3B2;
+  --ink2:#14171D;--suave-claro:#545B68;--card-claro:#FBFAF6;--vivo:#E5484D;
+  --wa-bg:#0B141A;--wa-head:#1F2C33;--wa-in:#202C33;--wa-out:#005C4B;
+  --r-sm:8px;--r-md:16px;--r-lg:24px;--pill:999px;
+  --display:"Space Grotesk",Arial,sans-serif;--body:"DM Sans",Arial,sans-serif;
+  --wrap:1200px;--pad:clamp(20px,4vw,40px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--tinta);color:var(--texto);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);color:var(--titulo);margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(44px,6.6vw,92px);line-height:1;font-weight:700}
+h2{font-size:clamp(32px,4.4vw,58px);line-height:1.06;font-weight:600}
+h3{font-size:clamp(21px,2vw,26px);line-height:1.2;font-weight:600}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.sec{padding:clamp(72px,10vw,128px) 0}
+.claro{background:var(--papel);color:var(--ink2)}
+.claro h1,.claro h2,.claro h3{color:var(--ink2)}
+.lead{font-size:clamp(18px,1.6vw,21px);color:var(--suave);max-width:60ch}
+.claro .lead{color:var(--suave-claro)}
+.sec-head{display:grid;gap:18px;margin-bottom:clamp(40px,5vw,64px);max-width:760px}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:6px}
+.claro :focus-visible{outline-color:var(--azul-claro)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 26px;border-radius:var(--pill);font:700 17px/1.2 var(--body);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .15s,transform .15s,border-color .15s}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-lima{background:var(--lima);color:var(--tinta)}
+.btn-lima:hover{background:var(--lima-hover)}
+.btn-linha{border-color:var(--borda);color:var(--texto)}
+.btn-linha:hover{border-color:var(--suave)}
+.btn-tinta{background:var(--tinta);color:var(--lima)}
+.btn-tinta:hover{background:#000}
+.claro .btn-linha{border-color:var(--borda-clara);color:var(--ink2)}
+.claro .btn-linha:hover{border-color:var(--suave-claro)}
+
+/* cabeçalho */
+.topo{position:sticky;top:0;z-index:50;background:rgba(14,17,22,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--borda)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
+.marca{display:flex;align-items:center;text-decoration:none}
+.marca svg{height:34px;width:auto}
+.menu{display:flex;align-items:center;gap:32px}
+.menu ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.menu a:not(.btn){text-decoration:none;color:var(--suave);font-weight:500;font-size:16px}
+.menu a:not(.btn):hover{color:var(--texto)}
+.menu .btn{min-height:44px;padding:10px 20px;font-size:15px}
+.burger{display:none;background:none;border:2px solid var(--borda);color:var(--texto);border-radius:12px;width:46px;height:46px;cursor:pointer}
+.burger svg{margin:auto;width:22px;height:22px}
+@media (max-width:900px){
+  .burger{display:block}
+  .menu{position:absolute;left:0;right:0;top:72px;flex-direction:column;align-items:stretch;gap:8px;padding:16px var(--pad) 24px;background:var(--tinta);border-bottom:1px solid var(--borda);display:none}
+  .menu.aberto{display:flex}
+  .menu ul{flex-direction:column;gap:0}
+  .menu ul a{display:block;padding:14px 0;font-size:18px;border-bottom:1px solid var(--borda)}
+  .menu .btn{margin-top:12px;min-height:52px}
+}
+
+/* hero */
+.hero{padding:clamp(48px,7vw,96px) 0 clamp(64px,8vw,112px);background:radial-gradient(circle at 85% 30%,#1F2B16 0%,var(--tinta) 55%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(40px,6vw,80px);align-items:center}
+.hero h1{max-width:12ch}
+.hero .lead{margin-top:24px;color:#C9CFD8}
+.acoes{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.garantias{display:flex;flex-wrap:wrap;gap:12px 28px;margin:36px 0 0;padding:0;list-style:none;color:var(--suave);font-size:16px}
+.garantias li{display:flex;align-items:center;gap:8px}
+.garantias svg{width:20px;height:20px;color:var(--lima);flex:none}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero h1{max-width:none}}
+
+/* telefone / conversa */
+.fone{width:min(420px,100%);height:580px;margin-left:auto;background:var(--wa-bg);border:3px solid var(--borda);border-radius:40px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.fone.largo{width:100%;height:520px;margin:0;border-radius:28px}
+.fone-top{background:var(--wa-head);padding:16px 20px;display:flex;align-items:center;gap:14px}
+.av{width:44px;height:44px;border-radius:50%;background:var(--lima);color:var(--tinta);font:800 20px/1 var(--body);display:grid;place-items:center;flex:none}
+.av.azul{background:var(--azul)}
+.fone-top b{display:block;font-size:17px;color:#E9EDEF}
+.st{font-size:14px;color:#8FA3AD}
+.ms{flex:1;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;overflow:hidden}
+.b{max-width:84%;padding:10px 14px;border-radius:14px;font-size:16px;line-height:1.4;color:#E9EDEF;flex:none;animation:entra .3s ease both}
+.b.l{background:var(--wa-in);align-self:flex-start;border-top-left-radius:4px}
+.b.a{background:var(--wa-out);align-self:flex-end;border-top-right-radius:4px}
+.div{align-self:center;font-size:13px;color:#AFC1C9;background:#18242B;padding:4px 12px;border-radius:8px;flex:none;animation:entra .3s ease both}
+.ok{align-self:center;background:var(--lima);color:var(--tinta);font-weight:700;font-size:15px;padding:8px 16px;border-radius:var(--pill);flex:none;animation:entra .3s ease both}
+.dig{align-self:flex-end;background:var(--wa-out);padding:14px 16px;border-radius:14px;display:flex;gap:6px;flex:none}
+.dig i{width:8px;height:8px;border-radius:50%;background:#B7E4D6;animation:pisca 1s infinite}
+.dig i:nth-child(2){animation-delay:.2s}.dig i:nth-child(3){animation-delay:.4s}
+@keyframes pisca{0%,80%,100%{opacity:.25}40%{opacity:1}}
+@keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (max-width:900px){.fone{margin:0 auto;height:520px}}
+
+/* faixa pergunta / oferta */
+.faixa{background:var(--lima);color:var(--tinta);padding:clamp(64px,8vw,104px) 0}
+.faixa h2{color:var(--tinta);font-size:clamp(30px,4.6vw,64px);max-width:20ch}
+.faixa p{margin-top:20px;font-size:clamp(18px,1.8vw,24px);max-width:48ch}
+
+/* dores */
+.dores{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,80px);align-items:start}
+.dores .sec-head{position:sticky;top:112px;margin:0}
+.contador{font-weight:700;color:var(--azul-claro);min-height:3.2em}
+.lista-dor{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.dor{width:100%;display:grid;grid-template-columns:48px 1fr 32px;gap:18px;align-items:center;text-align:left;background:var(--card-claro);border:1.5px solid var(--borda-clara);border-radius:var(--r-md);padding:20px 22px;cursor:pointer;font:inherit;color:inherit;transition:border-color .15s,background .15s}
+.dor:hover{border-color:var(--suave-claro)}
+.dor .ic{width:48px;height:48px;border-radius:12px;background:#E9E6DD;display:grid;place-items:center;color:var(--azul-claro)}
+.dor .ic svg{width:24px;height:24px}
+.dor b{display:block;font-family:var(--display);font-size:20px;font-weight:600;line-height:1.25}
+.dor span.t{display:block;color:var(--suave-claro);font-size:16px;margin-top:2px}
+.dor .ck{width:32px;height:32px;border-radius:50%;border:2px solid var(--borda-clara);display:grid;place-items:center;color:transparent;transition:all .15s}
+.dor .ck svg{width:18px;height:18px}
+.dor[aria-pressed="true"]{border-color:var(--ink2);background:#fff}
+.dor[aria-pressed="true"] .ck{background:var(--lima);border-color:var(--ink2);color:var(--tinta)}
+@media (max-width:900px){.dores{grid-template-columns:1fr}.dores .sec-head{position:static}}
+
+/* calculadora */
+.calc{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch}
+.campos{display:grid;gap:14px}
+.campo{background:var(--sup);border:1px solid var(--borda);border-radius:var(--r-md);padding:20px 22px;display:grid;grid-template-columns:1fr auto;gap:12px 16px;align-items:center}
+.campo label{font-weight:500;color:var(--texto)}
+.campo .num{display:flex;align-items:center;gap:6px;background:var(--tinta);border:1px solid var(--borda);border-radius:10px;padding:6px 12px}
+.campo .num span{color:var(--suave);font-size:16px}
+.campo input[type=number]{width:96px;background:none;border:0;color:var(--titulo);font:700 20px/1.2 var(--display);text-align:right;-moz-appearance:textfield}
+.campo input[type=number]::-webkit-inner-spin-button,.campo input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.campo input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--lima);height:28px;cursor:pointer}
+.resultado{background:var(--lima);color:var(--tinta);border-radius:var(--r-lg);padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;gap:12px}
+.resultado .rot{font-weight:700;font-size:18px}
+.resultado .valor{font:700 clamp(44px,6vw,76px)/1 var(--display);letter-spacing:-.03em;word-break:break-word}
+.resultado .ano{font-size:20px;font-weight:500}
+.resultado .form{font-size:15px;opacity:.8;margin-top:auto;padding-top:16px;border-top:1.5px solid rgba(14,17,22,.25)}
+.resultado .btn{margin-top:8px;align-self:flex-start}
+.nota{margin-top:18px;color:var(--suave);font-size:15px}
+@media (max-width:900px){.calc{grid-template-columns:1fr}}
+
+/* como funciona */
+.fluxo{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;list-style:none;margin:0;padding:0;counter-reset:passo}
+.passo{position:relative;background:var(--card-claro);border:1.5px solid var(--borda-clara);border-radius:var(--r-md);padding:24px 20px;counter-increment:passo}
+.passo::before{content:counter(passo);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--ink2);color:var(--lima);font:700 16px/1 var(--display);margin-bottom:18px}
+.passo:not(:last-child)::after{content:"";position:absolute;top:42px;right:-17px;width:18px;height:2px;background:var(--ink2)}
+.passo.fim{background:var(--lima);border-color:var(--lima)}
+.passo p{color:var(--suave-claro);font-size:16px;margin-top:6px}
+.passo.fim p{color:var(--ink2)}
+.gestao{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.gestao div{background:var(--ink2);color:var(--texto);border-radius:var(--r-md);padding:24px 26px}
+.gestao h3{color:var(--titulo)}
+.gestao p{color:var(--suave);font-size:16px;margin-top:6px}
+.gestao-rot{margin-top:40px;font-weight:700;color:var(--suave-claro)}
+@media (max-width:1000px){.fluxo{grid-template-columns:1fr 1fr}.passo::after{display:none}.passo.fim{grid-column:1/-1}}
+@media (max-width:560px){.fluxo,.gestao{grid-template-columns:1fr}}
+
+/* produtos (abas) */
+.abas{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.aba{font:600 16px/1.2 var(--body);color:var(--suave);background:none;border:1.5px solid var(--borda);border-radius:var(--pill);padding:12px 20px;cursor:pointer;transition:all .15s}
+.aba:hover{color:var(--texto);border-color:var(--suave)}
+.aba[aria-selected="true"]{background:var(--lima);border-color:var(--lima);color:var(--tinta)}
+.painel{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,64px);align-items:center}
+.painel[hidden]{display:none}
+.painel h3{font-size:clamp(28px,3vw,40px)}
+.painel .lead{margin-top:16px}
+.itens{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px}
+.itens li{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start}
+.itens svg{width:24px;height:24px;color:var(--lima);margin-top:2px}
+.selo{display:inline-block;margin-top:24px;font-size:15px;color:var(--suave);border:1px solid var(--borda);border-radius:var(--pill);padding:6px 14px}
+@media (max-width:900px){.painel{grid-template-columns:1fr}.abas{flex-wrap:nowrap;overflow-x:auto;margin-left:calc(var(--pad)*-1);margin-right:calc(var(--pad)*-1);padding:0 var(--pad) 6px;scrollbar-width:none}.aba{flex:none}}
+
+/* demo relatório */
+.grupo .rel{background:var(--wa-in);border-radius:14px;padding:16px 18px;color:#E9EDEF;font-size:16px;width:92%;animation:entra .4s ease both}
+.rel .tt{color:var(--lima);font-weight:700;margin-bottom:6px}
+.rel .r{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #2A3942}
+.rel .r b{font-variant-numeric:tabular-nums}
+.rel .ft{color:#9FB0B9;margin-top:8px}
+
+/* demo dashboard */
+.dash{background:var(--sup);border:1px solid var(--borda);border-radius:28px;padding:20px;display:grid;gap:14px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.kpi{background:var(--tinta);border-radius:14px;padding:14px 16px}
+.kpi span{display:block;font-size:14px;color:var(--suave)}
+.kpi b{display:block;font:700 clamp(24px,2.6vw,34px)/1.1 var(--display);font-variant-numeric:tabular-nums;color:var(--titulo);margin-top:4px}
+.kpi.hi b{color:var(--lima)}
+.bloco{background:var(--tinta);border-radius:14px;padding:16px 18px}
+.bloco-h{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:12px}
+.bloco-h span{color:var(--suave);font-weight:400}
+.linha{display:grid;grid-template-columns:110px 1fr 48px;gap:12px;align-items:center;font-size:15px;margin-bottom:10px}
+.trilho{height:14px;background:#1F2632;border-radius:7px;overflow:hidden}
+.barra{height:100%;width:0;background:var(--lima);border-radius:7px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.barra.az{background:var(--azul)}
+.linha em{font-style:normal;text-align:right;font-variant-numeric:tabular-nums;color:var(--suave)}
+@media (max-width:560px){.kpis{grid-template-columns:1fr 1fr}}
+
+/* demo copiloto */
+.call{background:var(--tinta);border:3px solid var(--borda);border-radius:28px;padding:18px;display:grid;gap:14px}
+.call-top{display:flex;justify-content:space-between;align-items:center;color:var(--suave);font-size:15px}
+.vivo{background:var(--vivo);color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:var(--pill)}
+.telas{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tela{height:150px;background:#1A212C;border-radius:16px;display:grid;place-items:center;align-content:center;gap:8px;color:var(--suave);font-size:15px;transition:box-shadow .3s}
+.tela.fala{box-shadow:0 0 0 3px var(--azul)}
+.tela .av{width:64px;height:64px;font-size:22px}
+.transc{background:var(--sup);border-radius:14px;padding:14px 16px;font-size:16px;min-height:78px}
+.transc b{color:#8FB0FF}
+.sug{background:#1B2412;border:2px solid var(--lima);border-radius:14px;padding:16px 18px;font-size:16px;opacity:0;transform:translateY(12px);transition:opacity .4s,transform .4s}
+.sug.on{opacity:1;transform:none}
+.sug .o{color:var(--lima);font-weight:700;margin-bottom:4px}
+.sug .k{color:var(--suave)}
+
+/* antes e depois */
+.comp{border:1.5px solid var(--borda-clara);border-radius:var(--r-lg);overflow:hidden;background:var(--card-claro)}
+.comp-l{display:grid;grid-template-columns:.7fr 1fr 1.1fr;border-top:1px solid var(--borda-clara)}
+.comp-l>*{padding:20px 24px}
+.comp-l.cab{border-top:0;background:#E9E6DD;font-weight:700}
+.comp-l.cab .cel{background:var(--lima)}
+.comp-l .etapa{font-weight:700;font-family:var(--display)}
+.comp-l .hoje{color:var(--suave-claro)}
+.comp-l .cel{font-weight:700;background:#F3F9DE}
+@media (max-width:760px){
+  .comp-l.cab{display:none}
+  .comp-l{grid-template-columns:1fr}
+  .comp-l>*{padding:6px 20px}
+  .comp-l .etapa{padding-top:18px}
+  .comp-l .hoje::before{content:"Hoje: ";font-weight:700}
+  .comp-l .cel{padding-bottom:18px;margin-top:6px}
+  .comp-l .cel::before{content:"Com a Célere IA: "}
+}
+
+/* segurança */
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.seg div{display:grid;grid-template-columns:52px 1fr;gap:20px;align-items:start;background:var(--sup);border:1px solid var(--borda);border-radius:var(--r-md);padding:26px}
+.seg svg{width:40px;height:40px;color:var(--lima)}
+.seg p{color:var(--suave);margin-top:6px;font-size:16px}
+@media (max-width:760px){.seg{grid-template-columns:1fr}}
+
+/* implantação */
+.linha-tempo{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;list-style:none;margin:0;padding:0;position:relative}
+.linha-tempo::before{content:"";position:absolute;left:0;right:0;top:14px;height:3px;background:var(--borda-clara)}
+.linha-tempo li{position:relative;padding-top:48px}
+.linha-tempo li::before{content:"";position:absolute;top:0;left:0;width:30px;height:30px;border-radius:50%;background:var(--lima);border:3px solid var(--ink2)}
+.linha-tempo .dia{font-weight:700;color:var(--azul-claro);font-size:15px}
+.linha-tempo h3{margin-top:4px}
+.linha-tempo p{color:var(--suave-claro);font-size:16px;margin-top:6px}
+.impl-nota{margin-top:48px;font-size:clamp(18px,1.8vw,22px);font-weight:500}
+@media (max-width:900px){
+  .linha-tempo{grid-template-columns:1fr;gap:28px;padding-left:48px}
+  .linha-tempo::before{left:13px;right:auto;top:0;bottom:0;width:3px;height:auto}
+  .linha-tempo li{padding-top:0}
+  .linha-tempo li::before{left:-48px}
+}
+
+/* planos */
+.planos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.plano{background:var(--sup);border:1.5px solid var(--borda);border-radius:var(--r-lg);padding:32px 28px;display:flex;flex-direction:column;gap:16px}
+.plano.dest{border:3px solid var(--lima);position:relative}
+.plano .tag{align-self:flex-start;font-size:14px;font-weight:700;padding:5px 12px;border-radius:var(--pill);border:1.5px solid var(--borda);color:var(--suave)}
+.plano.dest .tag{background:var(--lima);border-color:var(--lima);color:var(--tinta)}
+.preco{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.preco b{font:700 clamp(40px,4vw,52px)/1 var(--display);letter-spacing:-.03em;color:var(--titulo)}
+.plano.dest .preco b{color:var(--lima)}
+.preco span{color:var(--suave)}
+.setup{color:var(--suave);font-size:16px}
+.plano ul{list-style:none;margin:8px 0 0;padding:16px 0 0;border-top:1px solid var(--borda);display:grid;gap:10px;flex:1}
+.plano li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:16px}
+.plano li svg{width:22px;height:22px;color:var(--lima)}
+.plano .btn{margin-top:8px;width:100%}
+.planos-nota{margin-top:24px;color:var(--suave);font-size:16px;max-width:70ch}
+@media (max-width:980px){.planos{grid-template-columns:1fr;max-width:520px}}
+
+/* oferta */
+.oferta .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.oferta .cinco{font:700 clamp(120px,16vw,200px)/.8 var(--display);letter-spacing:-.05em}
+.oferta .btn{margin-top:28px}
+@media (max-width:700px){.oferta .wrap{grid-template-columns:1fr}}
+
+/* faq */
+.faq{display:grid;gap:12px;max-width:860px}
+.faq details{background:var(--card-claro);border:1.5px solid var(--borda-clara);border-radius:var(--r-md);padding:0 24px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font:600 20px/1.3 var(--display)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:500 28px/1 var(--body);color:var(--azul-claro);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 22px;color:var(--suave-claro);max-width:70ch}
+
+/* cta final e rodapé */
+.final{text-align:left;background:radial-gradient(circle at 15% 80%,#1F2B16 0%,var(--tinta) 55%)}
+.final h2{max-width:18ch;font-size:clamp(36px,5.4vw,72px)}
+.final .lead{margin-top:20px}
+.rodape{border-top:1px solid var(--borda);padding:40px 0;color:var(--suave);font-size:15px}
+.rodape .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.rodape svg{height:28px;width:auto}
+.rodape nav{display:flex;flex-wrap:wrap;gap:20px}
+.rodape a{text-decoration:none}
+.rodape a:hover{color:var(--texto)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+  CONFIGURE AQUI SEUS CONTATOS (procure por CONTATO no final do arquivo)
+============================================================= -->
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Célere IA, voltar ao início"><svg viewBox="0 0 500 128" role="img" aria-label="Célere IA" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0 0) scale(1.0)"><path d="M87.64 82.47 A30 30 0 1 1 87.64 45.53" fill="none" stroke="#C8F547" stroke-width="16"/><path d="M52.76 91.82 L24.6 94.78 L36.18 75.24 Z" fill="#C8F547"/><circle cx="94" cy="64" r="8.5" fill="#F4F2EC"/></g><g transform="translate(140 -12) scale(1.0)"><path d="M37.44 89.44 A19 19 0 1 1 37.44 62.56" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M93 76 A19 19 0 1 0 88.55 88.21" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M55 76 H98.0" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M70 44 L80 32" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M115 28 V100" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M173 76 A19 19 0 1 0 168.55 88.21" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M135 76 H178.0" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M193 52 V100" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M193 74 A17 17 0 0 1 210 57" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M255 76 A19 19 0 1 0 250.55 88.21" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M217 76 H260.0" fill="none" stroke="#F4F2EC" stroke-width="10"/><rect x="278" y="44" width="72" height="60" rx="14" fill="#C8F547"/><path d="M296 57 V91" fill="none" stroke="#0E1116" stroke-width="8"/><path d="M307 91 L321.5 57 L336 91 M312 80 H331" fill="none" stroke="#0E1116" stroke-width="8" stroke-linejoin="miter" stroke-miterlimit="3"/></g></svg></a>
+    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#duvidas">Dúvidas</a></li>
+      </ul>
+      <a class="btn btn-lima" data-wa="Olá! Quero agendar uma demonstração da Célere IA.">Agendar demonstração</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Seu lead respondido em segundos.</h1>
+      <p class="lead">A Célere IA atende no WhatsApp, qualifica, agenda e acompanha cada lead até a venda — 24 horas por dia, inclusive à noite e no fim de semana.</p>
+      <div class="acoes">
+        <a class="btn btn-lima" data-wa="Olá! Quero agendar uma demonstração da Célere IA.">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg>
+          Agendar demonstração
+        </a>
+        <a class="btn btn-linha" href="#como-funciona">Ver como funciona</a>
+      </div>
+      <ul class="garantias">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>No ar em 7 dias</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>API oficial do WhatsApp</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Passa para humano quando precisa</li>
+      </ul>
+    </div>
+    <div class="fone" data-demo="chat" data-script="academia" data-autostart aria-label="Simulação: agente da Célere IA atendendo um lead no WhatsApp" role="img">
+      <div class="fone-top"><div class="av">C</div><div><b>Academia · Atendimento</b><span class="st">online</span></div></div>
+      <div class="ms" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PERGUNTA -->
+<section class="faixa">
+  <div class="wrap">
+    <h2>Quantos leads chegaram ontem à noite — e quantos foram respondidos?</h2>
+    <p>Se a resposta for “não sei”, esse já é o primeiro problema.</p>
+  </div>
+</section>
+
+<!-- DORES -->
+<section class="sec claro">
+  <div class="wrap dores">
+    <div class="sec-head">
+      <h2>Isso acontece na sua empresa?</h2>
+      <p class="lead">Marque o que você reconhece no seu dia a dia comercial.</p>
+      <p class="contador" id="contador" aria-live="polite">Nenhuma situação marcada ainda.</p>
+    </div>
+    <ul class="lista-dor">
+      <li><button class="dor" aria-pressed="false"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>Só atende em horário comercial</b><span class="t">Leads da noite e do fim de semana ficam sem resposta.</span></span><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span></button></li>
+      <li><button class="dor" aria-pressed="false"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg></span><span><b>O vendedor perde tempo com curiosos</b><span class="t">E quem está pronto para comprar espera na fila.</span></span><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span></button></li>
+      <li><button class="dor" aria-pressed="false"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M9 12h.01M13 12h.01M17 12h.01"/></svg></span><span><b>O follow-up fica esquecido</b><span class="t">A cadência para depois de uma ou duas tentativas.</span></span><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span></button></li>
+      <li><button class="dor" aria-pressed="false"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span><b>O gestor não sabe o que aconteceu</b><span class="t">Quantos leads chegaram, quantos foram atendidos e por que se perderam.</span></span><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span></button></li>
+      <li><button class="dor" aria-pressed="false"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></svg></span><span><b>A objeção trava o fechamento</b><span class="t">Na reunião, o vendedor não sabe como responder e o cliente “vai pensar”.</span></span><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span></button></li>
+    </ul>
+  </div>
+</section>
+
+<!-- CALCULADORA -->
+<section class="sec" id="calculadora">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Quanto está ficando na mesa todo mês?</h2>
+      <p class="lead">Ajuste com os números da sua empresa e veja quanto de receita pode estar indo embora com leads que não recebem resposta rápida.</p>
+    </div>
+    <div class="calc">
+      <div class="campos">
+        <div class="campo"><label for="c-leads">Leads por mês</label><div class="num"><input type="number" id="c-leads-n" min="10" max="20000" step="10" aria-label="Leads por mês"></div><input type="range" id="c-leads" min="50" max="5000" step="10" value="300"></div>
+        <div class="campo"><label for="c-sem">Leads sem resposta rápida</label><div class="num"><input type="number" id="c-sem-n" min="1" max="100" step="1" aria-label="Percentual sem resposta rápida"><span>%</span></div><input type="range" id="c-sem" min="5" max="90" step="1" value="30"></div>
+        <div class="campo"><label for="c-conv">Taxa de conversão em venda</label><div class="num"><input type="number" id="c-conv-n" min="1" max="100" step="1" aria-label="Taxa de conversão"><span>%</span></div><input type="range" id="c-conv" min="1" max="50" step="1" value="10"></div>
+        <div class="campo"><label for="c-ticket">Ticket médio</label><div class="num"><span>R$</span><input type="number" id="c-ticket-n" min="10" max="1000000" step="10" aria-label="Ticket médio em reais"></div><input type="range" id="c-ticket" min="50" max="20000" step="50" value="500"></div>
+      </div>
+      <div class="resultado" aria-live="polite">
+        <p class="rot">Receita que pode estar escapando</p>
+        <p class="valor" id="c-mes">R$ 4.500</p>
+        <p class="ano">por mês, ou <b id="c-ano">R$ 54.000</b> por ano</p>
+        <a class="btn btn-tinta" id="c-cta" data-wa="Olá! Quero recuperar os leads que estou perdendo.">Quero recuperar esses leads</a>
+        <p class="form">Conta: leads por mês × % sem resposta rápida × taxa de conversão × ticket médio.</p>
+      </div>
+    </div>
+    <p class="nota">Os valores iniciais são apenas um exemplo. É uma estimativa, não uma promessa de resultado.</p>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="sec claro" id="como-funciona">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Do clique no anúncio até a venda, no automático</h2>
+      <p class="lead">Cinco agentes trabalham juntos em cada etapa do seu funil. Sua equipe entra quando o lead está pronto.</p>
+    </div>
+    <ol class="fluxo">
+      <li class="passo"><h3>Lead chega</h3><p>Pelo anúncio, Instagram ou site, direto no WhatsApp.</p></li>
+      <li class="passo"><h3>Agente SDR</h3><p>Responde em segundos, qualifica e agenda.</p></li>
+      <li class="passo"><h3>Follow-up</h3><p>Retoma quem parou de responder, no tempo certo.</p></li>
+      <li class="passo"><h3>Copiloto</h3><p>Ajuda o vendedor a responder objeções na reunião.</p></li>
+      <li class="passo fim"><h3>Venda fechada</h3><p>Com todo o histórico registrado.</p></li>
+    </ol>
+    <p class="gestao-rot">Enquanto isso, a gestão acompanha tudo:</p>
+    <div class="gestao">
+      <div><h3>Relatório no grupo comercial</h3><p>Resumo diário e semanal no WhatsApp da equipe, sem abrir sistema.</p></div>
+      <div><h3>Dashboard/CRM em tempo real</h3><p>O funil inteiro, com a campanha de origem de cada lead.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section class="sec" id="produtos">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Veja cada agente trabalhando</h2>
+      <p class="lead">Simulações de como a Célere IA atua no dia a dia. Escolha um agente.</p>
+    </div>
+    <div class="abas" role="tablist" aria-label="Agentes da Célere IA">
+      <button class="aba" role="tab" id="t-sdr" aria-controls="p-sdr" aria-selected="true">Agente SDR</button>
+      <button class="aba" role="tab" id="t-fu" aria-controls="p-fu" aria-selected="false" tabindex="-1">Follow-up</button>
+      <button class="aba" role="tab" id="t-rel" aria-controls="p-rel" aria-selected="false" tabindex="-1">Relatórios</button>
+      <button class="aba" role="tab" id="t-dash" aria-controls="p-dash" aria-selected="false" tabindex="-1">Dashboard/CRM</button>
+      <button class="aba" role="tab" id="t-cop" aria-controls="p-cop" aria-selected="false" tabindex="-1">Copiloto</button>
+    </div>
+
+    <div class="painel" role="tabpanel" id="p-sdr" aria-labelledby="t-sdr">
+      <div>
+        <h3>Atende em segundos, qualifica e agenda</h3>
+        <p class="lead">O agente conversa de forma natural e descobre o que importa antes de passar o lead para o vendedor.</p>
+        <ul class="itens">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span><b>Necessidade:</b> o que o lead procura</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span><b>Orçamento:</b> se cabe no investimento</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span><b>Prazo:</b> quando quer começar</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span><b>Decisor:</b> quem aprova a compra</span></li>
+        </ul>
+      </div>
+      <div class="fone largo" data-demo="chat" data-script="escola" role="img" aria-label="Simulação: agente SDR qualificando um lead de escola">
+        <div class="fone-top"><div class="av">C</div><div><b>Colégio · Matrículas</b><span class="st">online</span></div></div>
+        <div class="ms" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="painel" role="tabpanel" id="p-fu" aria-labelledby="t-fu" hidden>
+      <div>
+        <h3>Nenhum lead esquecido</h3>
+        <p class="lead">Quem parou de responder recebe novas mensagens em cadência, sempre usando o contexto da conversa.</p>
+        <ul class="itens">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Cadência combinada com você: 1 hora, 24 horas, 3 e 7 dias</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Mensagens diferentes a cada tentativa, nada de “oi, sumiu?”</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Encerra com educação quando o lead não tem interesse</span></li>
+        </ul>
+      </div>
+      <div class="fone largo" data-demo="chat" data-script="followup" role="img" aria-label="Simulação: follow-up recuperando um lead">
+        <div class="fone-top"><div class="av">C</div><div><b>Academia · Atendimento</b><span class="st">online</span></div></div>
+        <div class="ms" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="painel" role="tabpanel" id="p-rel" aria-labelledby="t-rel" hidden>
+      <div>
+        <h3>O resumo do dia no grupo da equipe</h3>
+        <p class="lead">O gestor recebe no WhatsApp, onde já está, o que aconteceu com os leads: sem abrir sistema.</p>
+        <ul class="itens">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Leads recebidos, qualificados, agendados e perdidos</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Principal motivo de perda de cada dia</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Resumo diário e semanal</span></li>
+        </ul>
+        <span class="selo">Números ilustrativos</span>
+      </div>
+      <div class="fone largo grupo" data-demo="relatorio" role="img" aria-label="Simulação: relatório diário no grupo comercial">
+        <div class="fone-top"><div class="av azul">G</div><div><b>Comercial · Equipe</b><span class="st">Célere IA e 6 participantes</span></div></div>
+        <div class="ms" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="painel" role="tabpanel" id="p-dash" aria-labelledby="t-dash" hidden>
+      <div>
+        <h3>O funil inteiro, em tempo real</h3>
+        <p class="lead">Cada conversa vira dado. Você vê de qual campanha veio cada lead e em que etapa o funil trava.</p>
+        <ul class="itens">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Histórico completo de cada conversa</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Origem do lead por campanha</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Disponível a partir do plano Profissional</span></li>
+        </ul>
+        <span class="selo">Números ilustrativos</span>
+      </div>
+      <div class="dash" data-demo="dash" role="img" aria-label="Simulação: dashboard com funil comercial">
+        <div class="kpis">
+          <div class="kpi"><span>Leads no mês</span><b data-v="480">0</b></div>
+          <div class="kpi"><span>Qualificados</span><b data-v="212">0</b></div>
+          <div class="kpi"><span>Reuniões</span><b data-v="91">0</b></div>
+          <div class="kpi hi"><span>Vendas</span><b data-v="38">0</b></div>
+        </div>
+        <div class="bloco"><div class="bloco-h">Funil comercial <span>este mês</span></div>
+          <div class="linha"><span>Leads</span><div class="trilho"><div class="barra" data-w="100"></div></div><em>100%</em></div>
+          <div class="linha"><span>Qualificados</span><div class="trilho"><div class="barra" data-w="44"></div></div><em>44%</em></div>
+          <div class="linha"><span>Reuniões</span><div class="trilho"><div class="barra" data-w="19"></div></div><em>19%</em></div>
+          <div class="linha"><span>Vendas</span><div class="trilho"><div class="barra" data-w="8"></div></div><em>8%</em></div>
+        </div>
+        <div class="bloco"><div class="bloco-h">Origem dos leads</div>
+          <div class="linha"><span>Matrículas</span><div class="trilho"><div class="barra az" data-w="46"></div></div><em>46%</em></div>
+          <div class="linha"><span>Aula grátis</span><div class="trilho"><div class="barra az" data-w="28"></div></div><em>28%</em></div>
+          <div class="linha"><span>Remarketing</span><div class="trilho"><div class="barra az" data-w="17"></div></div><em>17%</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="painel" role="tabpanel" id="p-cop" aria-labelledby="t-cop" hidden>
+      <div>
+        <h3>Sugestões ao vivo para quebrar objeções</h3>
+        <p class="lead">Durante a vídeo chamada, o Copiloto escuta a conversa e mostra ao vendedor o que responder e qual o próximo passo.</p>
+        <ul class="itens">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Detecta objeções de preço, confiança e decisor</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Sugere a resposta e a estratégia de fechamento</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Com aviso e consentimento de gravação, conforme a LGPD</span></li>
+        </ul>
+      </div>
+      <div class="call" data-demo="copiloto" role="img" aria-label="Simulação: copiloto sugerindo respostas durante uma reunião">
+        <div class="call-top"><span>Reunião de proposta</span><span class="vivo">AO VIVO</span></div>
+        <div class="telas"><div class="tela" data-cliente><div class="av azul">CL</div>Cliente</div><div class="tela"><div class="av">VD</div>Vendedor</div></div>
+        <div class="transc" data-transc></div>
+        <div class="sug" data-sug><div class="o" data-o></div><div><span class="k">Diga: </span><span data-d></span></div><div style="margin-top:6px"><span class="k">Próximo passo: </span><span data-p></span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANTES E DEPOIS -->
+<section class="sec claro">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>O que muda na sua operação</h2>
+    </div>
+    <div class="comp" role="table" aria-label="Comparação antes e depois da Célere IA">
+      <div class="comp-l cab" role="row"><span role="columnheader">Etapa</span><span role="columnheader">Hoje</span><span role="columnheader" class="cel">Com a Célere IA</span></div>
+      <div class="comp-l" role="row"><span class="etapa" role="cell">Primeira resposta</span><span class="hoje" role="cell">Horas depois, só em horário comercial</span><span class="cel" role="cell">Em segundos, 24 horas por dia</span></div>
+      <div class="comp-l" role="row"><span class="etapa" role="cell">Qualificação</span><span class="hoje" role="cell">O vendedor filtra os curiosos</span><span class="cel" role="cell">O vendedor recebe o lead qualificado</span></div>
+      <div class="comp-l" role="row"><span class="etapa" role="cell">Follow-up</span><span class="hoje" role="cell">Depende da memória de cada um</span><span class="cel" role="cell">Cadência automática, com contexto</span></div>
+      <div class="comp-l" role="row"><span class="etapa" role="cell">Gestão</span><span class="hoje" role="cell">Sem saber o que houve com cada lead</span><span class="cel" role="cell">Relatório diário no grupo e funil ao vivo</span></div>
+      <div class="comp-l" role="row"><span class="etapa" role="cell">Reunião</span><span class="hoje" role="cell">Objeção sem resposta</span><span class="cel" role="cell">Sugestões ao vivo para fechar</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEGURANÇA -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Você no controle de cada conversa</h2>
+      <p class="lead">A IA trabalha dentro das regras que a sua empresa define.</p>
+    </div>
+    <div class="seg">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><h3>Responde só o que você aprovar</h3><p>Preços, regras e respostas vêm de uma base validada pela sua equipe.</p></div></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><div><h3>Humano quando precisa</h3><p>O agente passa a conversa para o seu time a qualquer momento.</p></div></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><div><h3>API oficial do WhatsApp</h3><p>Modelos de mensagem aprovados e opt-in do lead, para proteger o seu número.</p></div></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><div><h3>LGPD desde o início</h3><p>Contrato de tratamento de dados e consentimento na gravação de chamadas.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPLANTAÇÃO -->
+<section class="sec claro">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>No ar em 7 dias</h2>
+      <p class="lead">Um roteiro de implantação testado, sem parar a sua operação.</p>
+    </div>
+    <ol class="linha-tempo">
+      <li><span class="dia">Dia 1</span><h3>Kickoff</h3><p>Levantamos dúvidas frequentes, preços, objeções e critérios de qualificação.</p></li>
+      <li><span class="dia">Dias 2 a 4</span><h3>Configuração</h3><p>Agentes e integrações: WhatsApp, CRM, agenda e grupo comercial.</p></li>
+      <li><span class="dia">Dia 5</span><h3>Testes</h3><p>Conversas simuladas antes de ir ao ar.</p></li>
+      <li><span class="dia">Dia 6</span><h3>Treinamento</h3><p>Sua equipe pronta para trabalhar com os agentes.</p></li>
+      <li><span class="dia">Dia 7</span><h3>Go-live</h3><p>No ar, com acompanhamento próximo por 30 dias.</p></li>
+    </ol>
+    <p class="impl-nota">Sua equipe participa do kickoff e do treinamento. A configuração é com a gente.</p>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="sec" id="planos">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Escolha o plano para o seu momento</h2>
+      <p class="lead">Todos os planos incluem implantação, treinamento e acompanhamento no primeiro mês.</p>
+    </div>
+    <div class="planos">
+      <article class="plano">
+        <span class="tag">Para começar</span>
+        <h3>Essencial</h3>
+        <div class="preco"><b>R$ 2.497</b><span>/mês</span></div>
+        <p class="setup">Setup: R$ 2.500</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Agente SDR</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Agente de follow-up</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Relatórios no grupo comercial</span></li>
+        </ul>
+        <a class="btn btn-linha" data-wa="Olá! Quero saber mais sobre o plano Essencial da Célere IA.">Falar sobre o Essencial</a>
+      </article>
+      <article class="plano dest">
+        <span class="tag">Recomendado</span>
+        <h3>Profissional</h3>
+        <div class="preco"><b>R$ 5.497</b><span>/mês</span></div>
+        <p class="setup">Setup: R$ 3.500</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Tudo do Essencial</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Dashboard/CRM em tempo real</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Origem de cada lead por campanha</span></li>
+        </ul>
+        <a class="btn btn-lima" data-wa="Olá! Quero saber mais sobre o plano Profissional da Célere IA.">Falar sobre o Profissional</a>
+      </article>
+      <article class="plano">
+        <span class="tag">Operação completa</span>
+        <h3>Completo</h3>
+        <div class="preco"><b>R$ 9.997</b><span>/mês</span></div>
+        <p class="setup">Setup: R$ 5.000</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Tudo do Profissional</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Copiloto de vídeo chamada</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Até 3 vendedores</span></li>
+        </ul>
+        <a class="btn btn-linha" data-wa="Olá! Quero saber mais sobre o plano Completo da Célere IA.">Falar sobre o Completo</a>
+      </article>
+    </div>
+    <p class="planos-nota">Contrato mínimo de 3 meses, com desconto no plano anual. Cada plano inclui uma franquia mensal de leads; o que passar disso é cobrado por lead.</p>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="faixa oferta">
+  <div class="wrap">
+    <p class="cinco" aria-hidden="true">5</p>
+    <div>
+      <h2>Setup reduzido para os 5 primeiros clientes</h2>
+      <p>Condição de lançamento com acompanhamento próximo nos primeiros 30 dias. Em troca, pedimos um depoimento e autorização para usar os resultados em um case.</p>
+      <a class="btn btn-tinta" data-wa="Olá! Quero garantir uma das 5 vagas com setup reduzido da Célere IA.">Quero uma das vagas</a>
+    </div>
+  </div>
+</section>
+
+<!-- DÚVIDAS -->
+<section class="sec claro" id="duvidas">
+  <div class="wrap">
+    <div class="sec-head"><h2>Dúvidas frequentes</h2></div>
+    <div class="faq">
+      <details><summary>Quanto tempo leva para começar?</summary><p>A implantação leva até 7 dias: kickoff, configuração, testes, treinamento e go-live. Nos primeiros 30 dias o acompanhamento é próximo.</p></details>
+      <details><summary>E se a IA não souber responder?</summary><p>O agente responde só com base no conteúdo que você aprovar. Quando a pergunta foge disso, ou quando o lead pede, a conversa passa para alguém da sua equipe.</p></details>
+      <details><summary>Funciona com o WhatsApp da minha empresa?</summary><p>Sim. Usamos a API oficial do WhatsApp Business e configuramos o número da sua empresa durante a implantação.</p></details>
+      <details><summary>Preciso trocar o meu CRM?</summary><p>Não. Os agentes podem registrar os leads no CRM que você já usa ou no nosso Dashboard/CRM, disponível a partir do plano Profissional.</p></details>
+      <details><summary>Tem fidelidade?</summary><p>O contrato mínimo é de 3 meses, e há desconto no plano anual.</p></details>
+      <details><summary>Como ficam os dados dos meus clientes?</summary><p>Seguimos a LGPD: há contrato de tratamento de dados e, no Copiloto, aviso e consentimento para gravar a chamada.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="sec final">
+  <div class="wrap">
+    <h2>Podemos mostrar a Célere IA atendendo os seus leads?</h2>
+    <p class="lead">Numa demonstração de 30 minutos, você vê o agente treinado com as perguntas do seu negócio.</p>
+    <div class="acoes">
+      <a class="btn btn-lima" data-wa="Olá! Quero agendar uma demonstração da Célere IA.">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg>
+        Agendar demonstração
+      </a>
+      <a class="btn btn-linha" data-mail>Enviar e-mail</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <svg viewBox="0 0 500 128" role="img" aria-label="Célere IA" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0 0) scale(1.0)"><path d="M87.64 82.47 A30 30 0 1 1 87.64 45.53" fill="none" stroke="#C8F547" stroke-width="16"/><path d="M52.76 91.82 L24.6 94.78 L36.18 75.24 Z" fill="#C8F547"/><circle cx="94" cy="64" r="8.5" fill="#F4F2EC"/></g><g transform="translate(140 -12) scale(1.0)"><path d="M37.44 89.44 A19 19 0 1 1 37.44 62.56" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M93 76 A19 19 0 1 0 88.55 88.21" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M55 76 H98.0" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M70 44 L80 32" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M115 28 V100" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M173 76 A19 19 0 1 0 168.55 88.21" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M135 76 H178.0" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M193 52 V100" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M193 74 A17 17 0 0 1 210 57" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M255 76 A19 19 0 1 0 250.55 88.21" fill="none" stroke="#F4F2EC" stroke-width="10"/><path d="M217 76 H260.0" fill="none" stroke="#F4F2EC" stroke-width="10"/><rect x="278" y="44" width="72" height="60" rx="14" fill="#C8F547"/><path d="M296 57 V91" fill="none" stroke="#0E1116" stroke-width="8"/><path d="M307 91 L321.5 57 L336 91 M312 80 H331" fill="none" stroke="#0E1116" stroke-width="8" stroke-linejoin="miter" stroke-miterlimit="3"/></g></svg>
+    <nav aria-label="Contatos">
+      <a data-wa="Olá! Vim pelo site da Célere IA.">WhatsApp</a>
+      <a data-mail>E-mail</a>
+      <a data-insta>Instagram</a>
+    </nav>
+    <p>© <span id="ano"></span> Célere IA. Brasília/DF.</p>
+  </div>
+</footer>
+
+<script>
+/* =====================================================
+   CONTATO — troque pelos seus dados antes de publicar
+   whatsapp: só números, com 55 + DDD (ex.: 5561999999999)
+===================================================== */
+const CONTATO = {
+  whatsapp: "5561999999999",
+  email: "contato@seudominio.com.br",
+  instagram: "https://instagram.com/seuperfil"
+};
+
+(function(){
+  const RM = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wait = t => new Promise(r => setTimeout(r, t));
+  const brl = v => v.toLocaleString("pt-BR", {style:"currency", currency:"BRL", maximumFractionDigits:0});
+
+  /* links de contato */
+  function waLink(msg){ return "https://wa.me/" + CONTATO.whatsapp + "?text=" + encodeURIComponent(msg); }
+  document.querySelectorAll("[data-wa]").forEach(a => { a.href = waLink(a.dataset.wa); a.target = "_blank"; a.rel = "noopener"; });
+  document.querySelectorAll("[data-mail]").forEach(a => { a.href = "mailto:" + CONTATO.email + "?subject=" + encodeURIComponent("Quero conhecer a Célere IA"); });
+  document.querySelectorAll("[data-insta]").forEach(a => { if (CONTATO.instagram) { a.href = CONTATO.instagram; a.target = "_blank"; a.rel = "noopener"; } else a.remove(); });
+  document.getElementById("ano").textContent = new Date().getFullYear();
+
+  /* menu móvel */
+  const burger = document.querySelector(".burger"), menu = document.getElementById("menu");
+  burger.addEventListener("click", () => {
+    const aberto = menu.classList.toggle("aberto");
+    burger.setAttribute("aria-expanded", aberto);
+    burger.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
+  });
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { menu.classList.remove("aberto"); burger.setAttribute("aria-expanded", false); }));
+
+  /* dores */
+  const cont = document.getElementById("contador"), dores = [...document.querySelectorAll(".dor")];
+  dores.forEach(b => b.addEventListener("click", () => {
+    b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") !== "true");
+    const n = dores.filter(x => x.getAttribute("aria-pressed") === "true").length;
+    cont.textContent = n === 0 ? "Nenhuma situação marcada ainda."
+      : n === 1 ? "Você marcou 1 de 5. A calculadora abaixo mostra quanto isso pode custar."
+      : "Você marcou " + n + " de 5. A calculadora abaixo mostra quanto isso pode custar.";
+  }));
+
+  /* calculadora */
+  const ids = ["leads", "sem", "conv", "ticket"];
+  const cta = document.getElementById("c-cta");
+  function calcular(){
+    const v = ids.map(i => Math.max(0, +document.getElementById("c-" + i + "-n").value || 0));
+    const mes = v[0] * (v[1] / 100) * (v[2] / 100) * v[3];
+    document.getElementById("c-mes").textContent = brl(mes);
+    document.getElementById("c-ano").textContent = brl(mes * 12);
+    cta.href = waLink("Olá! Fiz a conta no site da Célere IA: posso estar deixando cerca de " + brl(mes) + " por mês na mesa. Quero conhecer a solução.");
+  }
+  ids.forEach(i => {
+    const r = document.getElementById("c-" + i), n = document.getElementById("c-" + i + "-n");
+    n.value = r.value;
+    r.addEventListener("input", () => { n.value = r.value; calcular(); });
+    n.addEventListener("input", () => { r.value = Math.min(+r.max, Math.max(+r.min, +n.value || 0)); calcular(); });
+  });
+  calcular();
+
+  /* demonstrações */
+  const SCRIPTS = {
+    academia: [["l","Vi o anúncio da aula experimental. Como funciona?"],["a","Oi! A aula é gratuita. Qual o seu objetivo: condicionamento, força ou luta?"],["l","Luta! Sempre quis fazer jiu-jitsu"],["a","Ótimo! Tenho turma iniciante na terça ou na quinta, às 19h. Qual fica melhor?"],["l","Terça!"],["x","Aula experimental agendada"]],
+    escola: [["l","Oi, quanto custa a matrícula para o 6º ano?"],["a","Olá! Sou a assistente do colégio. Para te passar o valor certo: o aluno vem de outra escola?"],["l","Sim, está na rede pública"],["a","Temos uma condição especial de transição. Vocês pensam em começar já em fevereiro?"],["l","Isso, em fevereiro"],["a","Perfeito! A decisão é só sua ou de mais alguém da família?"],["l","Minha e do meu marido"],["a","Vou agendar a visita para vocês dois: quinta às 9h ou sábado às 10h?"],["l","Sábado às 10h"],["x","Lead qualificado e visita agendada"]],
+    followup: [["l","Quanto custa a aula?"],["a","Oi! A aula experimental é gratuita. Quer agendar um horário?"],["d","1 hora depois"],["a","Ficou alguma dúvida sobre os horários?"],["d","24 horas depois"],["a","Separei uma vaga para você na quinta, às 19h. Quer garantir?"],["l","Quero sim!"],["x","Lead recuperado pelo follow-up"]]
+  };
+
+  function Chat(el){
+    const ms = el.querySelector(".ms"), st = el.querySelector(".st"), sc = SCRIPTS[el.dataset.script];
+    let tok = 0;
+    function add(k, x){
+      const e = document.createElement("div");
+      e.className = k === "x" ? "ok" : k === "d" ? "div" : "b " + k;
+      e.textContent = x; ms.appendChild(e);
+    }
+    return {
+      start: async () => {
+        const my = ++tok;
+        if (RM) { ms.innerHTML = ""; sc.forEach(s => add(s[0], s[1])); return; }
+        while (my === tok) {
+          ms.innerHTML = ""; await wait(600);
+          for (const [k, x] of sc) {
+            if (my !== tok) return;
+            if (k === "a") {
+              const d = document.createElement("div"); d.className = "dig"; d.innerHTML = "<i></i><i></i><i></i>";
+              ms.appendChild(d); st.textContent = "digitando..."; await wait(1200); d.remove(); st.textContent = "online";
+              if (my !== tok) return;
+            }
+            add(k, x); await wait(k === "l" ? 1500 : k === "d" ? 800 : 1300);
+          }
+          await wait(4500);
+        }
+      },
+      stop: () => { tok++; }
+    };
+  }
+
+  function Relatorio(el){
+    const ms = el.querySelector(".ms"); let tok = 0;
+    const html = '<div class="rel"><div class="tt">Relatório do dia (exemplo)</div>' +
+      [["Leads recebidos",48],["Qualificados pelo SDR",21],["Visitas agendadas",9],["Recuperados no follow-up",5],["Perdidos",7]].map(r => '<div class="r"><span>' + r[0] + '</span><b data-v="' + r[1] + '">0</b></div>').join("") +
+      '<div class="ft">Principal motivo de perda: preço.</div></div>';
+    return {
+      start: async () => {
+        const my = ++tok;
+        while (my === tok) {
+          ms.innerHTML = ""; await wait(500); if (my !== tok) return;
+          ms.innerHTML = html;
+          const vs = [...ms.querySelectorAll("[data-v]")];
+          if (RM) { vs.forEach(v => v.textContent = v.dataset.v); return; }
+          await contar(vs, 1400);
+          await wait(6000);
+        }
+      },
+      stop: () => { tok++; }
+    };
+  }
+
+  function contar(vs, dur){
+    return new Promise(res => {
+      const t0 = performance.now();
+      (function f(n){
+        const p = Math.min((n - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+        vs.forEach(v => v.textContent = Math.round(v.dataset.v * e));
+        p < 1 ? requestAnimationFrame(f) : res();
+      })(t0);
+    });
+  }
+
+  function Dash(el){
+    const ns = [...el.querySelectorAll("[data-v]")], bs = [...el.querySelectorAll(".barra")]; let tok = 0;
+    return {
+      start: async () => {
+        const my = ++tok;
+        while (my === tok) {
+          ns.forEach(n => n.textContent = "0");
+          bs.forEach(b => { b.style.transition = "none"; b.style.width = "0"; });
+          await wait(400); if (my !== tok) return;
+          if (RM) { ns.forEach(n => n.textContent = n.dataset.v); bs.forEach(b => b.style.width = b.dataset.w + "%"); return; }
+          bs.forEach((b, i) => { b.style.transition = ""; setTimeout(() => b.style.width = b.dataset.w + "%", i * 110); });
+          await contar(ns, 1500);
+          await wait(7000);
+        }
+      },
+      stop: () => { tok++; }
+    };
+  }
+
+  function Copiloto(el){
+    const O = [
+      ["Achei caro. Vou pensar e te falo.","Objeção detectada: preço","“Faz sentido comparar. Quanto custa hoje um lead que ninguém respondeu?”","propor piloto de 30 dias com meta de agendamentos."],
+      ["Tenho medo do robô responder errado.","Objeção detectada: confiança","“Ele só responde com o que você aprovar e passa para um humano quando precisa.”","mostrar a demo com as perguntas do próprio cliente."],
+      ["Preciso falar com meu sócio antes.","Objeção detectada: decisor","“Claro! Que tal 20 minutos com ele ainda esta semana?”","agendar a reunião antes de desligar."]
+    ];
+    const cli = el.querySelector("[data-cliente]"), tx = el.querySelector("[data-transc]"), sg = el.querySelector("[data-sug]");
+    let tok = 0;
+    function mostra(q){ el.querySelector("[data-o]").textContent = q[1]; el.querySelector("[data-d]").textContent = q[2]; el.querySelector("[data-p]").textContent = q[3]; }
+    return {
+      start: async () => {
+        const my = ++tok;
+        if (RM) { tx.innerHTML = "<b>Cliente:</b> " + O[0][0]; mostra(O[0]); sg.classList.add("on"); return; }
+        for (let i = 0; my === tok; i = (i + 1) % O.length) {
+          const q = O[i];
+          sg.classList.remove("on"); tx.innerHTML = "<b>Cliente:</b> "; cli.classList.add("fala");
+          await wait(500);
+          for (let c = 1; c <= q[0].length; c++) { if (my !== tok) return; tx.innerHTML = "<b>Cliente:</b> " + q[0].slice(0, c); await wait(40); }
+          cli.classList.remove("fala"); await wait(600); if (my !== tok) return;
+          mostra(q); sg.classList.add("on");
+          await wait(6000);
+        }
+      },
+      stop: () => { tok++; cli.classList.remove("fala"); }
+    };
+  }
+
+  const FAB = { chat: Chat, relatorio: Relatorio, dash: Dash, copiloto: Copiloto };
+  const demos = new Map();
+  document.querySelectorAll("[data-demo]").forEach(el => demos.set(el, { ctl: FAB[el.dataset.demo](el), visivel: false, rodando: false }));
+
+  function ativo(el){ const p = el.closest(".painel"); return !p || !p.hidden; }
+  function atualiza(el){
+    const d = demos.get(el), deve = d.visivel && ativo(el);
+    if (deve && !d.rodando) { d.rodando = true; d.ctl.start(); }
+    else if (!deve && d.rodando) { d.rodando = false; d.ctl.stop(); }
+  }
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { demos.get(e.target).visivel = e.isIntersecting; atualiza(e.target); }), { threshold: 0.25 });
+    demos.forEach((d, el) => io.observe(el));
+  } else demos.forEach((d, el) => { d.visivel = true; atualiza(el); });
+
+  /* abas */
+  const abas = [...document.querySelectorAll(".aba")];
+  function seleciona(aba, foco){
+    abas.forEach(a => {
+      const on = a === aba;
+      a.setAttribute("aria-selected", on); a.tabIndex = on ? 0 : -1;
+      document.getElementById(a.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (foco) aba.focus();
+    demos.forEach((d, el) => atualiza(el));
+  }
+  abas.forEach((a, i) => {
+    a.addEventListener("click", () => seleciona(a));
+    a.addEventListener("keydown", e => {
+      let j = null;
+      if (e.key === "ArrowRight") j = (i + 1) % abas.length;
+      if (e.key === "ArrowLeft") j = (i - 1 + abas.length) % abas.length;
+      if (e.key === "Home") j = 0;
+      if (e.key === "End") j = abas.length - 1;
+      if (j !== null) { e.preventDefault(); seleciona(abas[j], true); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
