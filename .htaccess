@@ -1,0 +1,96 @@
+# =========================================================
+#  Célere IA — configuração do servidor (Hostinger / Apache · LiteSpeed)
+# =========================================================
+
+Options -Indexes -MultiViews
+ServerSignature Off
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1) Força HTTPS — DESATIVADO até o SSL estar ativo no hPanel.
+  #    Quando o cadeado aparecer em https://soucelere.com.br, apague o "# " das 3 linhas abaixo.
+  # RewriteCond %{HTTPS} !=on
+  # RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  # RewriteRule ^ https://soucelere.com.br%{REQUEST_URI} [L,R=301]
+
+  # 2) Domínio canônico sem "www"
+  RewriteCond %{HTTP_HOST} ^www\.soucelere\.com\.br$ [NC]
+  RewriteRule ^ %{REQUEST_SCHEME}://soucelere.com.br%{REQUEST_URI} [L,R=301]
+
+  # 3) /index.html -> /
+  RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ / [L,R=301]
+
+  # 4) Bloqueia arquivos e pastas ocultos (.git, .env, .htaccess...), exceto /.well-known
+  RewriteRule (^|/)\.(?!well-known/) - [F,L]
+
+  # 5) Bloqueia arquivos de projeto que não devem ser públicos
+  RewriteRule (^|/)(README\.md|LICENSE|package(-lock)?\.json|composer\.(json|lock)|.*\.(bak|old|orig|sql|log|sh|ini|env|yml|yaml|config|tpl|py|md))$ - [F,L,NC]
+</IfModule>
+
+# Reforço (caso mod_rewrite esteja desligado)
+<FilesMatch "^\.|\.(bak|old|orig|sql|log|sh|ini|env|yml|yaml|tpl|py)$">
+  Require all denied
+</FilesMatch>
+<Files "README.md">
+  Require all denied
+</Files>
+
+# ---------------------------------------------------------
+#  Cabeçalhos de segurança
+# ---------------------------------------------------------
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "accelerometer=(), autoplay=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=(), browsing-topics=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Cross-Origin-Resource-Policy "same-site"
+  Header always set X-Permitted-Cross-Domain-Policies "none"
+  # CSP: sem scripts inline, sem terceiros além do Google Fonts.
+  # Se adicionar Meta Pixel / Google Analytics, inclua os domínios deles aqui.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"
+  Header unset X-Powered-By
+  Header always unset X-Powered-By
+
+  # Arquivos de texto para robôs com tipo correto
+  <FilesMatch "\.(txt)$">
+    Header set Content-Type "text/plain; charset=utf-8"
+  </FilesMatch>
+</IfModule>
+
+# ---------------------------------------------------------
+#  Desempenho: compressão e cache
+# ---------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json application/ld+json application/manifest+json application/xml image/svg+xml
+</IfModule>
+
+AddType application/manifest+json .webmanifest
+AddType image/svg+xml .svg
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 hour"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType application/manifest+json "access plus 1 week"
+  ExpiresByType text/plain "access plus 1 day"
+  ExpiresByType application/xml "access plus 1 day"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

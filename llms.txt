@@ -1,0 +1,78 @@
+# Célere IA
+
+> Célere IA é uma consultoria de inteligência artificial para a área comercial de pequenas e médias empresas (PMEs) no Brasil. Faz o diagnóstico do processo comercial e implanta, em até 7 dias, agentes de IA no WhatsApp que respondem leads em segundos, qualificam, fazem follow-up, enviam relatórios ao time comercial e apoiam o vendedor em reuniões. Sediada em Brasília/DF, atende empresas em todo o Brasil.
+
+- Site: https://soucelere.com.br/
+- WhatsApp e telefone: +55 61 9944-9988 (https://wa.me/556199449988)
+- E-mail: contato@soucelere.com.br
+- Localização: Brasília/DF, Brasil · Atendimento em todo o Brasil
+- Idioma: português (Brasil)
+
+## O que a Célere IA faz
+
+- **Agente SDR**: atende o lead no WhatsApp em segundos, 24 horas por dia, qualifica por necessidade, orçamento, prazo e decisor, e agenda reunião, visita ou aula.
+- **Agente de follow-up**: retoma leads que pararam de responder com cadência combinada (por exemplo 1 hora, 24 horas, 3 e 7 dias) e mensagens com contexto.
+- **Relatórios no grupo comercial**: resumo diário e semanal no WhatsApp da equipe com leads recebidos, qualificados, agendados, recuperados e perdidos, e o principal motivo de perda.
+- **Dashboard/CRM em tempo real**: funil comercial completo com a campanha de origem de cada lead (a partir do plano Profissional).
+- **Copiloto de videochamada**: escuta a reunião (com aviso e consentimento, conforme a LGPD) e sugere ao vendedor como responder objeções de preço, confiança e decisor.
+
+## Como funciona a consultoria (implantação em 7 dias)
+
+1. Dia 1 — Diagnóstico comercial e kickoff: origem dos leads, tempo de resposta, dúvidas frequentes, preços, objeções e critérios de qualificação.
+2. Dias 2 a 4 — Desenho e configuração: agentes e integrações com WhatsApp (API oficial), CRM, agenda e grupo comercial.
+3. Dias 5 e 6 — Testes com conversas simuladas e treinamento da equipe.
+4. Dia 7 em diante — Go-live com acompanhamento próximo por 30 dias e otimização contínua.
+
+## Para quem é
+
+PMEs que recebem leads por anúncios (Meta/Instagram, Google), redes sociais ou site e vendem por conversa no WhatsApp, por exemplo: clínicas e estética, academias e estúdios, escolas e cursos, consultorias e serviços B2B.
+
+## Planos e preços (BRL)
+
+- **Essencial** — R$ 2.497/mês + setup de R$ 2.500: Agente SDR, agente de follow-up e relatórios no grupo comercial.
+- **Profissional** (recomendado) — R$ 5.497/mês + setup de R$ 3.500: tudo do Essencial, Dashboard/CRM em tempo real e origem de cada lead por campanha.
+- **Completo** — R$ 9.997/mês + setup de R$ 5.000: tudo do Profissional, Copiloto de videochamada e até 3 vendedores.
+- Contrato mínimo de 3 meses, desconto no plano anual. Cada plano inclui uma franquia mensal de leads; o excedente é cobrado por lead.
+- Todos os planos incluem diagnóstico, implantação, treinamento e acompanhamento no primeiro mês.
+- Condição de lançamento: setup reduzido para os 5 primeiros clientes.
+
+## Segurança e LGPD
+
+- Os agentes respondem apenas com base em conteúdo aprovado pela empresa cliente.
+- A conversa passa para um humano quando necessário ou quando o lead pede.
+- Uso da API oficial do WhatsApp Business, com modelos aprovados e opt-in.
+- Contrato de tratamento de dados (LGPD) e consentimento para gravação de chamadas.
+
+## Perguntas frequentes
+
+### O que faz uma consultoria de IA para vendas?
+Ela analisa o processo comercial da empresa — de onde vêm os leads, quanto tempo levam para ser respondidos, onde se perdem — e implanta inteligência artificial nos pontos que mais travam a venda. Na Célere IA, isso vira agentes no WhatsApp que atendem, qualificam, fazem follow-up e geram relatórios, com acompanhamento da nossa equipe.
+
+### Para que tipo de empresa a Célere IA funciona?
+Para pequenas e médias empresas que recebem leads por anúncio, Instagram ou site e vendem por conversa no WhatsApp: clínicas e estética, academias e estúdios, escolas e cursos, consultorias e prestadores de serviço B2B, entre outras.
+
+### Quanto tempo leva para começar?
+A implantação leva até 7 dias: diagnóstico e kickoff, configuração, testes, treinamento e go-live. Nos primeiros 30 dias o acompanhamento é próximo.
+
+### Quanto custa?
+Os planos começam em R$ 2.497 por mês no Essencial, R$ 5.497 no Profissional e R$ 9.997 no Completo, mais um setup único de R$ 2.500 a R$ 5.000. O contrato mínimo é de 3 meses, com desconto no plano anual.
+
+### E se a IA não souber responder?
+O agente responde só com base no conteúdo que você aprovar. Quando a pergunta foge disso, ou quando o lead pede, a conversa passa para alguém da sua equipe.
+
+### Funciona com o WhatsApp da minha empresa?
+Sim. Usamos a API oficial do WhatsApp Business e configuramos o número da sua empresa durante a implantação.
+
+### Preciso trocar o meu CRM?
+Não. Os agentes podem registrar os leads no CRM que você já usa ou no nosso Dashboard/CRM, disponível a partir do plano Profissional.
+
+### A Célere IA atende fora de Brasília?
+Sim. Somos de Brasília/DF e atendemos pequenas e médias empresas em todo o Brasil.
+
+### Como ficam os dados dos meus clientes?
+Seguimos a LGPD: há contrato de tratamento de dados e, no Copiloto, aviso e consentimento para gravar a chamada.
+
+## Páginas
+
+- [Página inicial](https://soucelere.com.br/): consultoria, agentes, planos e dúvidas
+- [Política de privacidade](https://soucelere.com.br/politica-de-privacidade.html)
