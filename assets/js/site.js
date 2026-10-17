@@ -64,7 +64,7 @@
     const mes = v[0] * (Math.min(v[1], 100) / 100) * (Math.min(v[2], 100) / 100) * v[3];
     $("#c-mes").textContent = brl(mes);
     $("#c-ano").textContent = brl(mes * 12);
-    if (cta) cta.href = waLink("Olá! Fiz a conta no site da Célere IA: posso estar deixando cerca de " + brl(mes) + " por mês na mesa. Quero conversar com um consultor.");
+    if (cta) cta.href = waLink((cta.dataset.ctx || "Olá! Fiz a conta no site da Célere IA") + ": posso estar deixando cerca de " + brl(mes) + " por mês na mesa. Quero conversar com um consultor.");
   }
   if ($("#c-leads")) {
     ids.forEach(i => {
@@ -84,6 +84,8 @@
   const SCRIPTS = {
     academia: [["l","Vi o anúncio da aula experimental. Como funciona?"],["a","Oi! A aula é gratuita. Qual o seu objetivo: condicionamento, força ou luta?"],["l","Luta! Sempre quis fazer jiu-jitsu"],["a","Ótimo! Tenho turma iniciante na terça ou na quinta, às 19h. Qual fica melhor?"],["l","Terça!"],["x","Aula experimental agendada"]],
     escola: [["l","Oi, quanto custa a matrícula para o 6º ano?"],["a","Olá! Sou a assistente do colégio. Para te passar o valor certo: o aluno vem de outra escola?"],["l","Sim, está na rede pública"],["a","Temos uma condição especial de transição. Vocês pensam em começar já em fevereiro?"],["l","Isso, em fevereiro"],["a","Perfeito! A decisão é só sua ou de mais alguém da família?"],["l","Minha e do meu marido"],["a","Vou agendar a visita para vocês dois: quinta às 9h ou sábado às 10h?"],["l","Sábado às 10h"],["x","Lead qualificado e visita agendada"]],
+    clinica: [["l","Oi! Vi o anúncio da limpeza de pele. Qual o valor?"],["a","Oi! Que bom que gostou. Antes de te passar o valor certo: é a primeira vez que você faz o procedimento?"],["l","Primeira vez sim"],["a","Perfeito. Nesse caso começamos com uma avaliação para indicar o protocolo ideal para a sua pele."],["a","Tenho quinta às 14h ou sábado às 10h. Qual fica melhor?"],["l","Sábado às 10h"],["x","Avaliação agendada"]],
+    b2b: [["l","Vi o anúncio de vocês. Atendem empresas do meu porte?"],["a","Olá! Para eu entender: quantos colaboradores a empresa tem hoje?"],["l","Uns 25"],["a","Está no nosso perfil. Qual o principal desafio agora: caixa, custos ou crescimento?"],["l","Caixa, está apertado"],["a","Entendi. Além de você, quem participa da decisão?"],["l","Meu sócio"],["a","Agendo 30 minutos com o consultor para vocês dois: terça às 10h ou quarta às 15h?"],["l","Quarta às 15h"],["x","Reunião qualificada agendada"]],
     followup: [["l","Quanto custa a aula?"],["a","Oi! A aula experimental é gratuita. Quer agendar um horário?"],["d","1 hora depois"],["a","Ficou alguma dúvida sobre os horários?"],["d","24 horas depois"],["a","Separei uma vaga para você na quinta, às 19h. Quer garantir?"],["l","Quero sim!"],["x","Lead recuperado pelo follow-up"]]
   };
   const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
