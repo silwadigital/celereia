@@ -74,4 +74,8 @@ Seguimos a LGPD: há contrato de tratamento de dados e, no Copiloto, aviso e con
 ## Páginas
 
 - [Página inicial](https://soucelere.com.br/): consultoria, agentes, planos e dúvidas
+- [Célere IA para clínicas e estética](https://soucelere.com.br/clinicas/): atendimento de pacientes no WhatsApp, qualificação e agendamento de avaliações
+- [Célere IA para academias e estúdios](https://soucelere.com.br/academias/): aula experimental, follow-up e matrícula
+- [Célere IA para escolas e cursos](https://soucelere.com.br/escolas/): atendimento de famílias, visitas e matrículas
+- [Célere IA para consultorias e serviços B2B](https://soucelere.com.br/consultorias/): qualificação de leads B2B, reuniões e Copiloto
 - [Política de privacidade](https://soucelere.com.br/politica-de-privacidade.html)
