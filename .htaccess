@@ -19,7 +19,7 @@ ErrorDocument 404 /404.html
 
   # 2) Domínio canônico sem "www"
   RewriteCond %{HTTP_HOST} ^www\.soucelere\.app$ [NC]
-  RewriteRule ^ %{REQUEST_SCHEME}://soucelere.app%{REQUEST_URI} [L,R=301]
+  RewriteRule ^ https://soucelere.app%{REQUEST_URI} [L,R=301]
 
   # 3) /index.html -> /
   RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
