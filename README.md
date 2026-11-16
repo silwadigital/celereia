@@ -21,3 +21,8 @@ Para trocar, procure por `556199449988` e `contato@soucelere.com.br` em todos os
 - Para adicionar Meta Pixel, Google Analytics ou outra ferramenta, inclua os domínios no `Content-Security-Policy` do `.htaccess`.
 - Ao alterar CSS/JS, aumente o `?v=` nos links do `index.html` (o cache é de 1 ano).
 - Ao mudar preços ou FAQ, atualize também o JSON-LD do `index.html` e o `llms.txt`.
+
+## Publicação (soucelere.app)
+- Servidor: VPS srv2001048 (Easypanel), projeto `celere`, serviço `site` (Dockerfile com Apache).
+- Deploy automático: webhook do GitHub (push) aciona a implantação no Easypanel; o serviço sempre puxa o branch `soucelere-app`.
+- Para publicar: faça commit/push no branch `soucelere-app`. Em ~1 minuto o site atualiza.
