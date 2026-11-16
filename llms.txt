@@ -27,13 +27,13 @@
 
 PMEs que recebem leads por anúncios (Meta/Instagram, Google), redes sociais ou site e vendem por conversa no WhatsApp, por exemplo: clínicas e estética, academias e estúdios, escolas e cursos, consultorias e serviços B2B.
 
-## Planos e preços (BRL)
+## Planos
 
-- **Essencial** — R$ 2.497/mês + setup de R$ 2.500: Agente SDR, agente de follow-up e relatórios no grupo comercial.
-- **Profissional** (recomendado) — R$ 5.497/mês + setup de R$ 3.500: tudo do Essencial, Dashboard/CRM em tempo real e origem de cada lead por campanha.
-- **Completo** — R$ 9.997/mês + setup de R$ 5.000: tudo do Profissional, Copiloto de videochamada e até 3 vendedores.
-- Contrato mínimo de 3 meses, desconto no plano anual. Cada plano inclui uma franquia mensal de leads; o excedente é cobrado por lead.
+- **Essencial**: Agente SDR, agente de follow-up e relatórios no grupo comercial.
+- **Profissional** (recomendado): tudo do Essencial, Dashboard/CRM em tempo real e origem de cada lead por campanha.
+- **Completo**: tudo do Profissional, Copiloto de videochamada e até 3 vendedores.
 - Todos os planos incluem diagnóstico, implantação, treinamento e acompanhamento no primeiro mês.
+- Os valores não são divulgados publicamente: são apresentados numa reunião de diagnóstico, de acordo com o volume de leads e a operação de cada empresa.
 
 ## Segurança e LGPD
 
@@ -54,7 +54,7 @@ Para pequenas e médias empresas que recebem leads por anúncio, Instagram ou si
 A implantação leva até 7 dias: diagnóstico e kickoff, configuração, testes, treinamento e go-live. Nos primeiros 30 dias o acompanhamento é próximo.
 
 ### Quanto custa?
-Os planos começam em R$ 2.497 por mês no Essencial, R$ 5.497 no Profissional e R$ 9.997 no Completo, mais um setup único de R$ 2.500 a R$ 5.000. O contrato mínimo é de 3 meses, com desconto no plano anual.
+O investimento depende do volume de leads e dos agentes que fazem sentido para a sua operação. Apresentamos os valores numa reunião de diagnóstico de 30 minutos, com uma proposta sob medida.
 
 ### E se a IA não souber responder?
 O agente responde só com base no conteúdo que você aprovar. Quando a pergunta foge disso, ou quando o lead pede, a conversa passa para alguém da sua equipe.

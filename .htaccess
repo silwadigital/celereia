@@ -54,7 +54,7 @@ ErrorDocument 404 /404.html
   Header always set X-Permitted-Cross-Domain-Policies "none"
   # CSP: sem scripts inline, sem terceiros além do Google Fonts.
   # Se adicionar Meta Pixel / Google Analytics, inclua os domínios deles aqui.
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; frame-src https://www.instagram.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"
   Header unset X-Powered-By
   Header always unset X-Powered-By
 

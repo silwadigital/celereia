@@ -430,3 +430,15 @@ p{margin:0;text-wrap:pretty}
 .planos-lp p{color:var(--suave);max-width:56ch}
 .planos-lp b{color:var(--titulo);font-family:var(--display);font-size:clamp(28px,3vw,40px);letter-spacing:-.03em;display:block;margin-bottom:6px}
 .lp .hero h1{font-size:clamp(38px,5vw,68px);max-width:15ch}
+
+/* Planos sem preço público */
+.sob-consulta{font:600 clamp(22px,2vw,26px)/1.2 var(--display);letter-spacing:-.02em;color:var(--titulo)}
+.plano.dest .sob-consulta{color:var(--lima)}
+
+/* Vídeo do Instagram */
+.video-grid{display:grid;grid-template-columns:1fr minmax(300px,400px);gap:clamp(32px,6vw,80px);align-items:center}
+.video-grid .sec-head{margin-bottom:0}
+.video-grid .btn{margin-top:28px}
+.video-ig{container-type:inline-size;width:100%;max-width:400px;justify-self:end;border-radius:var(--r-lg);overflow:hidden;background:#fff;border:1.5px solid var(--borda-clara);box-shadow:var(--sombra)}
+.video-ig iframe{display:block;width:100%;height:calc(125cqw + 212px);border:0}
+@media (max-width:960px){.video-grid{grid-template-columns:1fr}.video-ig{justify-self:center}}

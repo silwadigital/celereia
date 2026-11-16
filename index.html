@@ -40,8 +40,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Figtree:wght@400..700&amp;display=swap">
-<link rel="stylesheet" href="/assets/css/site.css?v=3">
-<script src="/assets/js/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/css/site.css?v=4">
+<script src="/assets/js/site.js?v=4" defer></script>
 
 <!-- Dados estruturados: Google, Bing e assistentes de IA -->
 <script type="application/ld+json">
@@ -81,7 +81,6 @@
     "@type": "Country",
     "name": "Brasil"
    },
-   "priceRange": "R$ 2.497 – R$ 9.997 por mês",
    "currenciesAccepted": "BRL",
    "knowsLanguage": "pt-BR",
    "knowsAbout": [
@@ -113,15 +112,7 @@
      {
       "@type": "Offer",
       "name": "Plano Essencial",
-      "description": "Agente SDR, agente de follow-up e relatórios no grupo comercial. Setup de R$ 2.500.",
-      "price": "2497",
-      "priceCurrency": "BRL",
-      "priceSpecification": {
-       "@type": "UnitPriceSpecification",
-       "price": "2497",
-       "priceCurrency": "BRL",
-       "unitText": "MONTH"
-      },
+      "description": "Agente SDR, agente de follow-up e relatórios no grupo comercial.",
       "itemOffered": {
        "@id": "https://soucelere.app/#servico"
       }
@@ -129,15 +120,7 @@
      {
       "@type": "Offer",
       "name": "Plano Profissional",
-      "description": "Tudo do Essencial, Dashboard/CRM em tempo real e origem de cada lead por campanha. Setup de R$ 3.500.",
-      "price": "5497",
-      "priceCurrency": "BRL",
-      "priceSpecification": {
-       "@type": "UnitPriceSpecification",
-       "price": "5497",
-       "priceCurrency": "BRL",
-       "unitText": "MONTH"
-      },
+      "description": "Tudo do Essencial, Dashboard/CRM em tempo real e origem de cada lead por campanha.",
       "itemOffered": {
        "@id": "https://soucelere.app/#servico"
       }
@@ -145,15 +128,7 @@
      {
       "@type": "Offer",
       "name": "Plano Completo",
-      "description": "Tudo do Profissional, Copiloto de videochamada e até 3 vendedores. Setup de R$ 5.000.",
-      "price": "9997",
-      "priceCurrency": "BRL",
-      "priceSpecification": {
-       "@type": "UnitPriceSpecification",
-       "price": "9997",
-       "priceCurrency": "BRL",
-       "unitText": "MONTH"
-      },
+      "description": "Tudo do Profissional, Copiloto de videochamada e até 3 vendedores.",
       "itemOffered": {
        "@id": "https://soucelere.app/#servico"
       }
@@ -287,7 +262,7 @@
      "name": "Quanto custa?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Os planos começam em R$ 2.497 por mês no Essencial, R$ 5.497 no Profissional e R$ 9.997 no Completo, mais um setup único de R$ 2.500 a R$ 5.000. O contrato mínimo é de 3 meses, com desconto no plano anual."
+      "text": "O investimento depende do volume de leads e dos agentes que fazem sentido para a sua operação. Apresentamos os valores numa reunião de diagnóstico de 30 minutos, com uma proposta sob medida."
      }
     },
     {
@@ -349,6 +324,7 @@
       <ul>
         <li><a href="#consultoria">Consultoria</a></li>
         <li><a href="#produtos">Agentes</a></li>
+        <li><a href="#video">Vídeo</a></li>
         <li><a href="#para-quem">Para quem</a></li>
         <li><a href="#planos">Planos</a></li>
         <li><a href="#duvidas">Dúvidas</a></li>
@@ -475,6 +451,21 @@
     <div class="gestao">
       <div data-reveal><h3>Relatório no grupo comercial</h3><p>Resumo diário e semanal no WhatsApp da equipe, sem abrir sistema.</p></div>
       <div data-reveal><h3>Dashboard/CRM em tempo real</h3><p>O funil inteiro, com a campanha de origem de cada lead.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VÍDEO -->
+<section class="sec claro" id="video" aria-labelledby="h-video">
+  <div class="wrap video-grid">
+    <div class="sec-head" data-reveal>
+      <p class="olho">Veja na prática</p>
+      <h2 id="h-video">O que muda quando a Célere IA entra no seu comercial</h2>
+      <p class="lead">Em menos de um minuto: resposta em segundos, lead qualificado, follow-up automático e relatório diário no grupo da equipe.</p>
+      <a class="btn btn-tinta" href="https://www.instagram.com/p/DepzJqPx7NB/" target="_blank" rel="noopener noreferrer">Ver no Instagram</a>
+    </div>
+    <div class="video-ig" data-reveal>
+      <iframe src="https://www.instagram.com/p/DepzJqPx7NB/embed/" title="Vídeo da Célere IA no Instagram" loading="lazy" scrolling="no" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -654,47 +645,44 @@
     <div class="sec-head" data-reveal>
       <p class="olho">Planos</p>
       <h2 id="h-planos">Escolha o plano para o seu momento</h2>
-      <p class="lead">Todos os planos incluem diagnóstico, implantação, treinamento e acompanhamento no primeiro mês.</p>
+      <p class="lead">Todos os planos incluem diagnóstico, implantação, treinamento e acompanhamento no primeiro mês. Os valores são apresentados numa reunião de diagnóstico.</p>
     </div>
     <div class="planos">
       <article class="plano" data-reveal>
         <span class="tag">Para começar</span>
         <h3>Essencial</h3>
-        <div class="preco"><b>R$ 2.497</b><span>/mês</span></div>
-        <p class="setup">Setup: R$ 2.500</p>
+        <p class="sob-consulta">Valor sob consulta</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Agente SDR</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Agente de follow-up</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Relatórios no grupo comercial</span></li>
         </ul>
-        <a class="btn btn-linha" href="https://wa.me/556199449988?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20o%20plano%20Essencial%20da%20C%C3%A9lere%20IA." target="_blank" rel="noopener noreferrer">Falar sobre o Essencial</a>
+        <a class="btn btn-linha" href="https://wa.me/556199449988?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20reuni%C3%A3o%20sobre%20o%20plano%20Essencial%20da%20C%C3%A9lere%20IA." target="_blank" rel="noopener noreferrer" aria-label="Agendar reunião sobre o plano Essencial">Agendar reunião</a>
       </article>
       <article class="plano dest" data-reveal>
         <span class="tag">Recomendado</span>
         <h3>Profissional</h3>
-        <div class="preco"><b>R$ 5.497</b><span>/mês</span></div>
-        <p class="setup">Setup: R$ 3.500</p>
+        <p class="sob-consulta">Valor sob consulta</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Tudo do Essencial</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Dashboard/CRM em tempo real</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Origem de cada lead por campanha</span></li>
         </ul>
-        <a class="btn btn-lima" href="https://wa.me/556199449988?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20o%20plano%20Profissional%20da%20C%C3%A9lere%20IA." target="_blank" rel="noopener noreferrer">Falar sobre o Profissional</a>
+        <a class="btn btn-lima" href="https://wa.me/556199449988?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20reuni%C3%A3o%20sobre%20o%20plano%20Profissional%20da%20C%C3%A9lere%20IA." target="_blank" rel="noopener noreferrer" aria-label="Agendar reunião sobre o plano Profissional">Agendar reunião</a>
       </article>
       <article class="plano" data-reveal>
         <span class="tag">Operação completa</span>
         <h3>Completo</h3>
-        <div class="preco"><b>R$ 9.997</b><span>/mês</span></div>
-        <p class="setup">Setup: R$ 5.000</p>
+        <p class="sob-consulta">Valor sob consulta</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Tudo do Profissional</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Copiloto de videochamada</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Até 3 vendedores</span></li>
         </ul>
-        <a class="btn btn-linha" href="https://wa.me/556199449988?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20o%20plano%20Completo%20da%20C%C3%A9lere%20IA." target="_blank" rel="noopener noreferrer">Falar sobre o Completo</a>
+        <a class="btn btn-linha" href="https://wa.me/556199449988?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20reuni%C3%A3o%20sobre%20o%20plano%20Completo%20da%20C%C3%A9lere%20IA." target="_blank" rel="noopener noreferrer" aria-label="Agendar reunião sobre o plano Completo">Agendar reunião</a>
       </article>
     </div>
-    <p class="planos-nota">Contrato mínimo de 3 meses, com desconto no plano anual. Cada plano inclui uma franquia mensal de leads; o que passar disso é cobrado por lead.</p>
+    <p class="planos-nota">A proposta é montada de acordo com o volume de leads e a operação da sua empresa. Fale com um consultor para agendar uma reunião de 30 minutos.</p>
   </div>
 </section>
 
@@ -711,7 +699,7 @@
       <details data-reveal><summary>O que faz uma consultoria de IA para vendas?</summary><p>Ela analisa o processo comercial da empresa — de onde vêm os leads, quanto tempo levam para ser respondidos, onde se perdem — e implanta inteligência artificial nos pontos que mais travam a venda. Na Célere IA, isso vira agentes no WhatsApp que atendem, qualificam, fazem follow-up e geram relatórios, com acompanhamento da nossa equipe.</p></details>
       <details data-reveal><summary>Para que tipo de empresa a Célere IA funciona?</summary><p>Para pequenas e médias empresas que recebem leads por anúncio, Instagram ou site e vendem por conversa no WhatsApp: clínicas e estética, academias e estúdios, escolas e cursos, consultorias e prestadores de serviço B2B, entre outras.</p></details>
       <details data-reveal><summary>Quanto tempo leva para começar?</summary><p>A implantação leva até 7 dias: diagnóstico e kickoff, configuração, testes, treinamento e go-live. Nos primeiros 30 dias o acompanhamento é próximo.</p></details>
-      <details data-reveal><summary>Quanto custa?</summary><p>Os planos começam em R$ 2.497 por mês no Essencial, R$ 5.497 no Profissional e R$ 9.997 no Completo, mais um setup único de R$ 2.500 a R$ 5.000. O contrato mínimo é de 3 meses, com desconto no plano anual.</p></details>
+      <details data-reveal><summary>Quanto custa?</summary><p>O investimento depende do volume de leads e dos agentes que fazem sentido para a sua operação. Apresentamos os valores numa reunião de diagnóstico de 30 minutos, com uma proposta sob medida.</p></details>
       <details data-reveal><summary>E se a IA não souber responder?</summary><p>O agente responde só com base no conteúdo que você aprovar. Quando a pergunta foge disso, ou quando o lead pede, a conversa passa para alguém da sua equipe.</p></details>
       <details data-reveal><summary>Funciona com o WhatsApp da minha empresa?</summary><p>Sim. Usamos a API oficial do WhatsApp Business e configuramos o número da sua empresa durante a implantação.</p></details>
       <details data-reveal><summary>Preciso trocar o meu CRM?</summary><p>Não. Os agentes podem registrar os leads no CRM que você já usa ou no nosso Dashboard/CRM, disponível a partir do plano Profissional.</p></details>
