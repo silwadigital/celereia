@@ -1,6 +1,6 @@
 # Célere IA — site institucional
 
-Site estático de https://soucelere.com.br (hospedagem Hostinger com implantação automática a partir deste repositório).
+Site estático de https://soucelere.app (hospedagem Hostinger, implantação via Git a partir do branch `soucelere-app`).
 
 ## Estrutura
 - `index.html` — página principal (conteúdo, SEO e dados estruturados JSON-LD)

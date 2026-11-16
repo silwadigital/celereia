@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://soucelere.com.br/</loc>
+    <loc>https://soucelere.app/</loc>
     <lastmod>2026-10-16</lastmod>
-    <image:image><image:loc>https://soucelere.com.br/assets/img/og-celere.png</image:loc></image:image>
+    <image:image><image:loc>https://soucelere.app/assets/img/og-celere.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://soucelere.com.br/politica-de-privacidade.html</loc>
-    <lastmod>2026-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://soucelere.com.br/clinicas/</loc>
+    <loc>https://soucelere.app/politica-de-privacidade.html</loc>
     <lastmod>2026-10-16</lastmod>
   </url>
   <url>
-    <loc>https://soucelere.com.br/academias/</loc>
+    <loc>https://soucelere.app/clinicas/</loc>
     <lastmod>2026-10-16</lastmod>
   </url>
   <url>
-    <loc>https://soucelere.com.br/escolas/</loc>
+    <loc>https://soucelere.app/academias/</loc>
     <lastmod>2026-10-16</lastmod>
   </url>
   <url>
-    <loc>https://soucelere.com.br/consultorias/</loc>
+    <loc>https://soucelere.app/escolas/</loc>
+    <lastmod>2026-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://soucelere.app/consultorias/</loc>
     <lastmod>2026-10-16</lastmod>
   </url>
 </urlset>

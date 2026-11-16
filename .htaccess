@@ -12,14 +12,14 @@ ErrorDocument 404 /404.html
   RewriteEngine On
 
   # 1) Força HTTPS — DESATIVADO até o SSL estar ativo no hPanel.
-  #    Quando o cadeado aparecer em https://soucelere.com.br, apague o "# " das 3 linhas abaixo.
+  #    Quando o cadeado aparecer em https://soucelere.app, apague o "# " das 3 linhas abaixo.
   # RewriteCond %{HTTPS} !=on
   # RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  # RewriteRule ^ https://soucelere.com.br%{REQUEST_URI} [L,R=301]
+  # RewriteRule ^ https://soucelere.app%{REQUEST_URI} [L,R=301]
 
   # 2) Domínio canônico sem "www"
-  RewriteCond %{HTTP_HOST} ^www\.soucelere\.com\.br$ [NC]
-  RewriteRule ^ %{REQUEST_SCHEME}://soucelere.com.br%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} ^www\.soucelere\.app$ [NC]
+  RewriteRule ^ %{REQUEST_SCHEME}://soucelere.app%{REQUEST_URI} [L,R=301]
 
   # 3) /index.html -> /
   RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]

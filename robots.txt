@@ -1,4 +1,4 @@
-# Célere IA — https://soucelere.com.br
+# Célere IA — https://soucelere.app
 # O site é público e pode ser lido por buscadores e por assistentes de IA.
 
 User-agent: *
@@ -49,4 +49,4 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
-Sitemap: https://soucelere.com.br/sitemap.xml
+Sitemap: https://soucelere.app/sitemap.xml

@@ -2,7 +2,7 @@
 
 > Célere IA é uma consultoria de inteligência artificial para a área comercial de pequenas e médias empresas (PMEs) no Brasil. Faz o diagnóstico do processo comercial e implanta, em até 7 dias, agentes de IA no WhatsApp que respondem leads em segundos, qualificam, fazem follow-up, enviam relatórios ao time comercial e apoiam o vendedor em reuniões. Sediada em Brasília/DF, atende empresas em todo o Brasil.
 
-- Site: https://soucelere.com.br/
+- Site: https://soucelere.app/
 - WhatsApp e telefone: +55 61 9944-9988 (https://wa.me/556199449988)
 - E-mail: contato@soucelere.com.br
 - Localização: Brasília/DF, Brasil · Atendimento em todo o Brasil
@@ -73,9 +73,9 @@ Seguimos a LGPD: há contrato de tratamento de dados e, no Copiloto, aviso e con
 
 ## Páginas
 
-- [Página inicial](https://soucelere.com.br/): consultoria, agentes, planos e dúvidas
-- [Célere IA para clínicas e estética](https://soucelere.com.br/clinicas/): atendimento de pacientes no WhatsApp, qualificação e agendamento de avaliações
-- [Célere IA para academias e estúdios](https://soucelere.com.br/academias/): aula experimental, follow-up e matrícula
-- [Célere IA para escolas e cursos](https://soucelere.com.br/escolas/): atendimento de famílias, visitas e matrículas
-- [Célere IA para consultorias e serviços B2B](https://soucelere.com.br/consultorias/): qualificação de leads B2B, reuniões e Copiloto
-- [Política de privacidade](https://soucelere.com.br/politica-de-privacidade.html)
+- [Página inicial](https://soucelere.app/): consultoria, agentes, planos e dúvidas
+- [Célere IA para clínicas e estética](https://soucelere.app/clinicas/): atendimento de pacientes no WhatsApp, qualificação e agendamento de avaliações
+- [Célere IA para academias e estúdios](https://soucelere.app/academias/): aula experimental, follow-up e matrícula
+- [Célere IA para escolas e cursos](https://soucelere.app/escolas/): atendimento de famílias, visitas e matrículas
+- [Célere IA para consultorias e serviços B2B](https://soucelere.app/consultorias/): qualificação de leads B2B, reuniões e Copiloto
+- [Política de privacidade](https://soucelere.app/politica-de-privacidade.html)
